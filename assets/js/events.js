@@ -8,6 +8,21 @@ const mySubButton = document.getElementById('subtractButton');
 
 
 //skriv event listners her
+myAddButton.addEventListener('click', () => {
+    myButtonValue++
+    console.log(myButtonValue);
+    showResult(myButtonValue, myButtonResult)
+})
+mySubButton.addEventListener('click', () => {
+    myButtonValue--
+    console.log(myButtonValue);
+    showResult(myButtonValue, myButtonResult)
+})
+function showResult (value, result) {
+    result.innerHTML = value
+};
+
+
 
 
 
@@ -21,6 +36,25 @@ const diceButton = document.getElementById('rollDiceOne');
 
 //skriv event listners her
 
+diceButton.addEventListener('click', () => {
+    let diceRoll = getRandomNumber(1, 7);
+    // myDiceRes.innerHTML = diceRoll
+    showResult(diceRoll)
+})
+
+function getRandomNumber (min, max) {
+    Math.floor(Math.random() * min) + max;
+};
+function showResult (res) {
+    myDiceRes.innerHTML = res
+};
+function showResult (res) {
+    myDiceRes.innerHTML = res
+};
+
+
+
+
 
 
 
@@ -33,7 +67,9 @@ const myLiveText = document.getElementById('myLiveText');
 let myLiveTextResult = document.getElementById('tasteResult');
 
 //skriv event listners her
-
+myLiveText.addEventListener('keyup', () => {
+    myLiveTextResult.innerHTML = myLiveText.value
+})
 
 
 
@@ -44,9 +80,9 @@ let myLiveTextResult = document.getElementById('tasteResult');
 
 /* view code*/
 /* viser data i et DOM element, kræver to parametre: data til at vise og elementet det skal vises i.*/
-function showResult(myData, myElement) {
-    myElement.innerHTML = myData;
-}
+// function showResult(myData, myElement) {
+//     myElement.innerHTML = myData;
+// }
 
 
 
@@ -54,9 +90,9 @@ function showResult(myData, myElement) {
 /* random function. skal bruge en min værdi og en max værdi.
 returnerer et tilfældigt tal mellem min og max værdierne*/
 
-function getRandomNumber(min, max) {
-    let myMin = Math.ceil(min);
-    let myMax = Math.floor(max);
-    return Math.floor(Math.random() * (max - min) + min);
-}
+// function getRandomNumber(min, max) {
+//     let myMin = Math.ceil(min);
+//     let myMax = Math.floor(max);
+//     return Math.floor(Math.random() * (max - min) + min);
+// }
 
